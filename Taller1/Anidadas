@@ -1,0 +1,17 @@
+class Persona:
+    def __init__(self, nombre):
+        self.nombre = nombre
+
+    class Mascota:
+        def __init__(self, nombre):
+            self.nombre = nombre
+
+# Crear un objeto de la clase Persona y asignar un nombre
+persona = Persona("Santiago")
+
+# Crear un objeto de la clase Mascota dentro del objeto Persona y asignar un nombre
+mascota = persona.Mascota("Manchas")
+
+# Imprimir el nombre de la persona y el nombre de su mascota
+print("Nombre de la persona:", persona.nombre)
+print("Nombre de la mascota:", mascota.nombre)

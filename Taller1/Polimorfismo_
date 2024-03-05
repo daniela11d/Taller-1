@@ -1,0 +1,16 @@
+class Animal:
+    sonido = None
+
+class Perro(Animal):
+    sonido = "Guau!"
+
+class Gato(Animal):
+    sonido = "Miau!"
+
+# Crear objetos de cada clase (Perro y Gato)
+perro = Perro()
+gato = Gato()
+
+# Acceder a la variable sonido de cada objeto
+print("El perro hace:", perro.sonido)
+print("El gato hace:", gato.sonido)

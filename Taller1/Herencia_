@@ -1,0 +1,20 @@
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+
+class Estudiante(Persona):
+    def __init__(self, nombre, edad, carrera):
+        super().__init__(nombre, edad)
+        self.carrera = carrera
+
+    def get_carrera(self):
+        return self.carrera
+
+# Crear un objeto de la clase Estudiante e inicializar sus atributos
+estudiante1 = Estudiante("Natalia", 22, "Ingeniería Sistemas")
+
+# Imprimir nombre, edad y carrera del objeto creado
+print("Nombre:", estudiante1.nombre)
+print("Edad:", estudiante1.edad)
+print("Carrera:", estudiante1.get_carrera())

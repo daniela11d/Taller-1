@@ -1,0 +1,23 @@
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+
+    def get_nombre(self):
+        return self.nombre
+
+    def get_edad(self):
+        return self.edad
+
+    def set_nombre(self, nombre):
+        self.nombre = nombre
+
+    def set_edad(self, edad):
+        self.edad = edad
+
+# Crear un objeto de la clase Persona e inicializar sus atributos
+persona1 = Persona("Natalia", 22)
+
+# Imprimir el nombre y la edad del objeto creado
+print("Nombre:", persona1.get_nombre())
+print("Edad:", persona1.get_edad())
