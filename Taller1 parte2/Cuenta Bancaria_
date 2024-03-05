@@ -1,0 +1,60 @@
+class CuentaBancaria:
+    def __init__(self, nombre_titular):
+        self.nombre_titular = nombre_titular
+        self.saldo = 0
+        self.transacciones = []
+        self.estado = "abierta"  # Estado inicial de la cuenta
+        
+    def aperturar_cuenta(self):
+        if self.estado == "abierta":
+            print("La cuenta ya está abierta.")
+        else:
+            self.estado = "abierta"
+            print("Cuenta aperturada con éxito.")
+    
+    def cerrar_cuenta(self):
+        if self.estado == "cerrada":
+            print("La cuenta ya está cerrada.")
+        else:
+            self.estado = "cerrada"
+            print("Cuenta cerrada con éxito.")
+    
+    def bloquear_cuenta(self):
+        if self.estado == "bloqueada":
+            print("La cuenta ya está bloqueada.")
+        else:
+            self.estado = "bloqueada"
+            print("Cuenta bloqueada con éxito.")
+    
+    def depositar(self, monto):
+        if monto > 0:
+            self.saldo += monto
+            self.transacciones.append(f"Depósito de {monto}")
+            print(f"Se depositó {monto} correctamente.")
+        else:
+            print("El monto a depositar debe ser mayor que cero.")
+    
+    def retirar(self, monto):
+        if self.saldo >= monto > 0:
+            self.saldo -= monto
+            self.transacciones.append(f"Retiro de {monto}")
+            print(f"Se retiró {monto} correctamente.")
+        elif monto <= 0:
+            print("El monto a retirar debe ser mayor que cero.")
+        else:
+            print("Saldo insuficiente para realizar el retiro.")
+    
+    def mostrar_saldo(self):
+        print(f"Saldo actual: {self.saldo}")
+
+# Ejemplo de uso
+cuenta = CuentaBancaria("Natalia Paez")
+cuenta.aperturar_cuenta()
+cuenta.depositar(1000)
+cuenta.mostrar_saldo()
+cuenta.retirar(500)
+cuenta.mostrar_saldo()
+cuenta.cerrar_cuenta()
+cuenta.depositar(200)
+cuenta.retirar(300)
+cuenta.mostrar_saldo()
